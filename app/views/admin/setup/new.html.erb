@@ -1,0 +1,20 @@
+<h1>Set up your site</h1>
+
+<% semantic_form_for Site.instance, :url => admin_setup_path do |form| -%>
+  <%= form.error_messages %>
+  
+  <% form.semantic_fields_for :users do |user| -%>
+    <% user.inputs :name => "Administrative user" do -%>
+      <%= user.input :first_name %>
+      <%= user.input :last_name %>
+      <%= user.input :email %>
+      <%= user.input :login %>
+      <%= user.input :password, :as => :password %>
+      <%= user.input :password_confirmation, :as => :password %>
+    <% end -%>
+  <% end -%>
+  
+  <% form.buttons do -%>
+    <%= form.commit_button "Continue" %>
+  <% end -%>
+<% end -%>

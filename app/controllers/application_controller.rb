@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  before_filter :check_site_configuration
+  
+protected
+  # Checks to see if the application has been set up correctly.
+  def check_site_configuration
+    redirect_to new_admin_setup_path unless Site.configured?
+  end
 end
