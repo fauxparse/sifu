@@ -3,8 +3,8 @@ class Site < ActiveRecord::Base
   accepts_nested_attributes_for :users
   
   class << self
-    def instance
-      @instance ||= (find(:first) || new)
+    def instance(force_reload = false)
+      (force_reload || !@instance) ? (@instance = (find(:first) || new)) : @instance
     end
 
     def configured?
@@ -12,7 +12,7 @@ class Site < ActiveRecord::Base
     end
     
     def configure_with(params = {})
-      instance.update_attributes params
+      instance(true).update_attributes params
     end
     
     def method_missing(symbol, *args)

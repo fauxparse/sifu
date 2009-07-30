@@ -1,5 +1,7 @@
 <h1>Set up your site</h1>
 
+<pre><%=h Site.instance.users.inspect %></pre>
+
 <% semantic_form_for Site.instance, :url => admin_setup_path do |form| -%>
   <%= form.error_messages %>
   

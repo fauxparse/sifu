@@ -24,7 +24,7 @@ end
 require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
 
-After do |scenario|
+Before do |scenario|
   # clear singleton instances
   Site.send :instance_variable_set, "@instance", nil
 end

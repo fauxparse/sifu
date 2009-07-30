@@ -11,8 +11,11 @@ module NavigationHelpers
     when /the home\s?page/
       '/'
 
-    when /the setup page/
+    when /the new setup page/
       '/admin/setup/new'
+    
+    when /the setup page/
+      '/admin/setup'
     
     # Add more mappings here.
     # Here is a more fancy example:

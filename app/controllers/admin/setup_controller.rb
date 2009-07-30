@@ -1,8 +1,6 @@
 class Admin::SetupController < ApplicationController
   def new
-    @site = returning Site.instance do |site|
-      site.users.build :login => "admin"
-    end
+    Site.instance.users.build if Site.instance.users.empty?
   end
   
   def create
