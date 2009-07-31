@@ -42,6 +42,7 @@ function display_feed_summary(feed_name, feed_uri) {
       console.log(data);
       var s = '<ol>';
       for (i in data) {
+        if (i > 4) break;
         s += '<li><a class="title" href="' + data[i].link + '">' + data[i].title + '</a>';
         s += '<span class="description">' + data[i].description + '</span>';
         s += '<span class="date">' + data[i].date + '</span></li>';

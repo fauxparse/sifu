@@ -112,7 +112,7 @@ body, td, input, select, textarea {
   
   #external .feed {
     position: absolute;
-    top: -240px;
+    bottom: 0px;
     left: -320px;
     width: 272px;
     font-size: 85%; 
