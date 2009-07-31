@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090729225502) do
+ActiveRecord::Schema.define(:version => 20090731081756) do
+
+  create_table "feeds", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "type"
+  end
+
+  add_index "feeds", ["name"], :name => "index_feeds_on_name"
 
   create_table "sites", :force => true do |t|
     t.datetime "created_at"

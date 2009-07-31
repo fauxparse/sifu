@@ -1,0 +1,178 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: white url(../images/sidebar.png) repeat-y -1024px 0px;
+  overflow-x: hidden;
+}
+
+body, td, input, select, textarea {
+  font: 14px/1.6 Helvetica, Arial, sans-serif;
+}
+
+#container {
+  background: white;
+  margin-left: 288px;
+  position: relative;
+}
+
+/* Sidebar {{{ */
+
+  #header #logo {
+    display: inline;
+  }
+
+  #header #logo a {
+    position: absolute;
+    left: -72px;
+    top: 252px;
+    width: 104px;
+    height: 248px;
+    text-decoration: none;
+    border: none;
+    text-indent: -1000em;
+    overflow: hidden;
+    background: url(../images/logo.png) no-repeat 0px 0px;
+  }
+
+  /* Blurb {{{ */
+
+  #blurb {
+    position: absolute;
+    left: -272px;
+    top: 16px;
+    width: 256px;
+    height: 232px;
+    background: url(../images/bubble.png) no-repeat 0px 0px;
+  }
+
+  #blurb p {
+    padding: 24px 24px 0px 16px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: -0.1em;
+    text-transform: lowercase;
+    font-weight: bold;
+    color: #999;
+  }
+
+  #blurb a {
+    text-decoration: none;
+    border: none;
+    color: #999;
+  }
+
+  #blurb a.name {
+    color: #666;
+    font-size: 125%;
+  }
+  
+  /* }}} */
+
+  /* Also appearing… {{{ */
+    
+  #external {
+    position: absolute;
+    left: -272px;
+    top: 256px;
+    color: #111;
+  }
+  
+  #external h2 {
+    font-size: 125%;
+  }
+
+  #external ul li {
+    list-style: none;
+    display: inline;
+  }
+
+  #external ul li a {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    text-decoration: none;
+    border: none;
+    text-indent: -1000em;
+    overflow: hidden;
+  }
+  
+  #external ul li a:hover,
+  #external ul li a.active {
+    background-position: 0px 100%;
+  }
+  
+  #external ul li a.stfu    { background-image: url(../images/logo-stfu.png); height: 40px; width: 168px; margin-bottom: 4px; }
+  #external ul li a.twitter { background-image: url(../images/logo-twitter.png); height: 40px; width: 164px; }
+  #external ul li a.last-fm { background-image: url(../images/logo-last-fm.png); height: 64px; width: 148px; }
+  #external ul li a.github  { background-image: url(../images/logo-github.png); height: 64px; width: 200px; }
+  
+  #external .feed {
+    position: absolute;
+    top: -240px;
+    left: -320px;
+    width: 272px;
+    font-size: 85%; 
+  }
+  
+  #external .feed li {
+    display: block;
+    list-style: none;
+  }
+  
+  #external #twitter-feed {
+    color: #111;
+  }
+  
+  #external .feed .title {
+    display: block;
+    text-decoration: none;
+    color: #111;
+  }
+  
+  #external .feed .title:hover {
+    color: black;
+  }
+  
+  #external #twitter-feed .description {
+    display: none;
+  }
+  
+  #external #twitter-feed .date {
+    font-size: 75%;
+    text-transform: uppercase;
+  }
+  
+  #external #last-fm-feed {
+    
+  }
+  
+  /* }}} */
+
+  /* Copyright {{{ */
+
+  #copyright {
+    position: absolute;
+    top: 512px;
+    left: -272px;
+    width: 224px;
+    color: #181818;
+    font-size: 85%;
+  }
+  
+  #copyright .title {
+    font-weight: bold;
+    letter-spacing: -0.1em;
+    font-size: 125%;
+  }
+  
+  #copyright a {
+    color: #111;
+  }
+
+  /* }}} */
+  
+/* }}} */

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>robo.tk</title>
+	<link rel="stylesheet" href="/robotk/stylesheets/styles.css" type="text/css" media="screen" charset="utf-8" />
+	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.easing.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.background.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/externals.js"></script>
+	<%= yield :head %>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <h1 id="logo"><a href="/">robo.tk: a pane in the RSS</a></h1>
+    </div>
+    
+    <div id="main">
+      <%= yield %>
+    </div>
+    
+    <div id="footer">
+      <blockquote id="blurb">
+        <p><a class="name" rel="about" href="/about">Matt Powell</a> is a <a class="design" rel="tag" href="/design">designer</a>, <a class="illustration" rel="tag" href="/illustration">illustrator</a>, <a class="code" rel="tag" href="/code">developer</a>, <a class="writing" rel="tag" href="/writing">writer</a> &amp; <a class="grammar" rel="tag" href="/grammar">grammarian</a> in Christchurch, New Zealand.</p>
+      </blockquote>
+      <div id="external">
+        <h2>Also appearing at&hellip;</h2>
+        <ul class="external-links">
+          <li><a class="stfu" rel="external" href="http://stfu.co.nz" title="Matt Powell on STFU.co.nz">STFU.co.nz</a></li>
+          <li><a class="twitter" rel="external" href="http://twitter.com/fauxparse" title="fauxparse on Twitter">Twitter</a></li>
+          <li><a class="last-fm" rel="external" href="http://last.fm/user/semideranged" title="semideranged on last.fm">last.fm</a></li>
+          <li><a class="github" rel="external" href="http://github.com/fauxparse" title="fauxparse on github">STFU.co.nz</a></li>
+        </ul>
+      </div>
+      <div id="copyright">
+        <span class="license"><span class="title" xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">robo.tk</span> &copy; <a xmlns:cc="http://creativecommons.org/ns#" href="http://robo.tk" property="cc:attributionName" rel="cc:attributionURL">Matt Powell</a>. <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nz/">Some rights reserved</a>. Let's not be <a href="http://www.legislation.govt.nz/act/public/2008/0027/latest/DLM1122643.html">dicks</a> about the whole copyright thing.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

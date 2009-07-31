@@ -3,5 +3,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resource :setup, :controller => "setup"
   end
   
+  map.resources :feeds
   map.root :controller => "posts", :action => "index"
 end
