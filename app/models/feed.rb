@@ -21,8 +21,9 @@ class Feed < ActiveRecord::Base
   end
   memoize :parsed
   
+  # TODO: put automated refreshes into a background job to speed up responses
   def data(refresh = false)
-    self.refresh if refresh || self[:data].blank?
+    self.refresh if refresh || self[:data].blank? || self.updated_at < Time.now - 5.minutes
     super
   end
   

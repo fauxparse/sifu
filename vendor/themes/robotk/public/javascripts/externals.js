@@ -29,6 +29,7 @@ function close_sidebar(easing, callback) {
   var l = parseInt($('#container').css('left'));
   $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 700, easing);
   $('#container').animate({ left:'-=' + l + 'px' }, 700, easing, callback);
+  $('#external .feed').fadeOut(function() { $(this).remove(); });
 }
 
 function display_feed_summary(feed_name, feed_uri) {

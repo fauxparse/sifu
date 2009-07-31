@@ -13,7 +13,6 @@ body, td, input, select, textarea {
 }
 
 #container {
-  background: white;
   margin-left: 288px;
   position: relative;
 }
@@ -114,13 +113,19 @@ body, td, input, select, textarea {
     position: absolute;
     bottom: 0px;
     left: -320px;
-    width: 272px;
+    width: 288px;
     font-size: 85%; 
+  }
+
+  #external .feed ol {
   }
   
   #external .feed li {
     display: block;
     list-style: none;
+    border-top: 1px solid #181818;
+    line-height: 1.5;
+    padding: 4px 8px 4px 0px;
   }
   
   #external #twitter-feed {
