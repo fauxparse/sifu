@@ -43,7 +43,6 @@ function close_sidebar(easing, callback) {
 
 function display_feed_summary(feed_name, feed_uri) {
   if ($('#external #' + feed_name + '-feed').length == 0) {
-    console.log('append!');
     $('#external').append('<div class="feed" id="' + feed_name + '-feed" style="display: none;"></div>');
   }
   $.ajax({
@@ -60,8 +59,8 @@ function display_feed_summary(feed_name, feed_uri) {
         content += '<span class="date">' + data[i].date + '</span></li>';
       }
       content += '</ol>';
-    	content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
-    	content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
+     content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
+     content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
       $('#' + feed_name + '-feed').html(content).fadeIn();
     }
   });
