@@ -1,0 +1,3 @@
+diaf_ie6:
+  repo: git://github.com/fauxparse/diaf_ie6.git
+  path: vendor/plugins

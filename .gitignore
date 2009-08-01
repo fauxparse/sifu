@@ -12,3 +12,4 @@ doc/plugins
 coverage/*
 db/*.sqlite3
 *.tmproj
+vendor/plugins/diaf_ie6
