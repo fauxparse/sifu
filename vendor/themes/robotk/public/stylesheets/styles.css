@@ -69,6 +69,13 @@ body, td, input, select, textarea {
     font-size: 125%;
   }
   
+  #blurb a.design:hover,       #blurb a.design.active       { color: #8dc63f; text-shadow: #8dc63f 0px 0px 2px; }
+  #blurb a.illustration:hover, #blurb a.illustration.active { color: #ec008c; text-shadow: #ec008c 0px 0px 2px; }
+  #blurb a.code:hover,         #blurb a.code.active         { color: #00aeef; text-shadow: #00aeef 0px 0px 2px; }
+  #blurb a.writing:hover,      #blurb a.writing.active      { color: #ffcc00; text-shadow: #ffcc00 0px 0px 2px; }
+  #blurb a.theatre:hover,      #blurb a.theatre.active      { color: #ed1c24; text-shadow: #ed1c24 0px 0px 2px; }
+  #blurb a.grammar:hover,      #blurb a.grammar.active      { color: #f26522; text-shadow: #f26522 0px 0px 2px; }
+  
   /* }}} */
 
   /* Also appearing… {{{ */
