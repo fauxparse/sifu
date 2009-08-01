@@ -11,7 +11,7 @@ class Feed < ActiveRecord::Base
   
   def entries
     (parsed/:item)[0,10].collect do |item|
-      Entry.new *(%w(title description pubDate link guid).collect { |f| (item / f.to_sym).inner_html })
+      Entry.new *(%w(title description pubDate link guid).collect { |f| (item / f.to_sym).inner_text })
     end
   end
   memoize :entries

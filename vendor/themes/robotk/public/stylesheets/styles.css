@@ -113,19 +113,21 @@ body, td, input, select, textarea {
     position: absolute;
     bottom: 0px;
     left: -320px;
-    width: 288px;
-    font-size: 85%; 
+    width: 304px;
+    background: #666;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
   }
 
   #external .feed ol {
+    padding: 8px 12px;
   }
   
   #external .feed li {
     display: block;
     list-style: none;
-    border-top: 1px solid #181818;
-    line-height: 1.5;
-    padding: 4px 8px 4px 0px;
+    line-height: normal;
+    padding: 4px 0px;
   }
   
   #external #twitter-feed {
@@ -136,23 +138,58 @@ body, td, input, select, textarea {
     display: block;
     text-decoration: none;
     color: #111;
+    font-weight: bold;
+    letter-spacing: -0.1em;
   }
   
   #external .feed .title:hover {
-    color: black;
+    color: #ec008c;
+    text-shadow: #ec008c 0px 0px 2px;
   }
   
-  #external #twitter-feed .description {
+  #external #twitter-feed .description,
+  #external #last-fm-feed .description {
     display: none;
   }
+
+  #external #stfu-feed .description {
+    display: block;
+    font-size: 85%;
+  }
   
-  #external #twitter-feed .date {
-    font-size: 75%;
+  #external .feed .date,
+  #external #github-feed .description {
+    font-size: 65%;
     text-transform: uppercase;
   }
   
-  #external #last-fm-feed {
-    
+  #external .feed a.close,
+  #external .feed a.more {
+    display: block;
+    font-size: 125%;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: -0.1em;
+    color: #111;
+    text-decoration: none;
+    border: none;
+  }
+
+  #external .feed a.close:hover,
+  #external .feed a.more:hover {
+    color: #ec008c;
+    text-shadow: #ec008c 0px 0px 2px;
+  }
+  
+  #external .feed a.close {
+    float: right;
+    margin-right: 12px;
+  }
+  
+  #external .feed a.more {
+    margin-bottom: 4px;
+    margin-left: 12px;
+    width: 4em;
   }
   
   /* }}} */

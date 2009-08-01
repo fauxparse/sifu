@@ -22,39 +22,65 @@ $(document).ready(function() {
   });
   
   $('#external a.twitter[rel*=external]').click(function() { display_feed_summary('twitter', 'http://localhost:3000/feeds/twitter'); });
-  $('#external a.last-fm[rel*=external]').click(function() { display_feed_summary('twitter', 'http://localhost:3000/feeds/last-fm'); });
+  $('#external a.last-fm[rel*=external]').click(function() { display_feed_summary('last-fm', 'http://localhost:3000/feeds/last-fm'); });
+  $('#external a.stfu[rel*=external]').click(function() { display_feed_summary('stfu', 'http://localhost:3000/feeds/stfu'); });
+  $('#external a.github[rel*=external]').click(function() {
+  	$.getJSON('http://github.com/api/v2/json/repos/show/fauxparse?callback=?', function(json, status){
+  		show_github_repositories(json.repositories.reverse());
+  	});
+  });
 });
 
 function close_sidebar(easing, callback) {
+  $('#external .feed').fadeOut(function() { $(this).remove() });
+  if (typeof(easing) == 'undefined') easing = 'easeOutBounce';
   var l = parseInt($('#container').css('left'));
   $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 700, easing);
   $('#container').animate({ left:'-=' + l + 'px' }, 700, easing, callback);
   $('#external .feed').fadeOut(function() { $(this).remove(); });
+  $('#external li a[rel*=external]').removeClass('active');
 }
 
 function display_feed_summary(feed_name, feed_uri) {
-  $('#external .feed').remove();
+  $('#external .feed').fadeOut(function() { $(this).remove() });
   $('#external').append('<div class="feed" id="' + feed_name + '-feed" style="display: none;"></div>');
   $.ajax({
     url:feed_uri,
     type:'get',
     dataType:'json',
     success:function(data) {
-      console.log(data);
-      var s = '<ol>';
+      var content = '<ol>';
       for (i in data) {
         if (i > 4) break;
-        s += '<li><a class="title" href="' + data[i].link + '">' + data[i].title + '</a>';
-        s += '<span class="description">' + data[i].description + '</span>';
-        s += '<span class="date">' + data[i].date + '</span></li>';
+        var title = feed_name == 'twitter' ? data[i].title.replace(/^.[^\:]+\:/, '') : data[i].title;
+        content += '<li><a class="title" href="' + data[i].link + '">' + title + '</a>';
+        content += '<span class="description">' + data[i].description + '</span>';
+        content += '<span class="date">' + data[i].date + '</span></li>';
       }
-      s += '</ol>';
-      $('#' + feed_name + '-feed').html(s).fadeIn();
-    },
-    error:function(x, s, e) {
-      console.log(s);
-      console.log(e);
+      content += '</ol>';
+    	content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
+    	console.log('a.' + feed_name + '[rel*=external]');
+    	content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
+      $('#' + feed_name + '-feed').html(content).fadeIn();
     }
   });
   return true;
 }
+
+function show_github_repositories(json) {
+  $('#external .feed').fadeOut(function() { $(this).remove() });
+  $('#external').append('<div class="feed" id="github-feed" style="display: none;"></div>');
+	var content = '<ol>';
+	var n = 0;
+	$.each(json, function(i) {
+	  if (n < 5 && !this.fork) {
+  	  content += '<li><a class="title" href="' + this.url + '">' + this.name + '</a>';
+  		content += '<span class="description">' + this.description + '</span></li>';
+  		n++;
+  	}
+	});
+	content += '</ol>';
+	content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
+	content += '<a class="more" target="_blank" href="http://github.com/fauxparse">More</a>';
+	$('#external .feed').html(content).fadeIn();
+};
