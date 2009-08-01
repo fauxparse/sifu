@@ -12,8 +12,8 @@ $(document).ready(function() {
         });
       } else {
         $(this).addClass('active');
-        $('body').animate({ backgroundPosition:'(-704px 0px)' }, 700, 'easeOutBounce');
-        $('#container').animate({ left:'+=320px' }, 700, 'easeOutBounce', function() {
+        $('body').animate({ backgroundPosition:'(-704px 0px)' }, 500, 'easeOutBounce');
+        $('#container').animate({ left:'+=320px' }, 500, 'easeOutBounce', function() {
           
         });
       }
@@ -32,18 +32,20 @@ $(document).ready(function() {
 });
 
 function close_sidebar(easing, callback) {
-  $('#external .feed').fadeOut(function() { $(this).remove() });
+  $('#external .feed').fadeOut('fast', function() { $(this).remove() });
   if (typeof(easing) == 'undefined') easing = 'easeOutBounce';
   var l = parseInt($('#container').css('left'));
-  $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 700, easing);
-  $('#container').animate({ left:'-=' + l + 'px' }, 700, easing, callback);
+  $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 500, easing);
+  $('#container').animate({ left:'-=' + l + 'px' }, 500, easing, callback);
   $('#external .feed').fadeOut(function() { $(this).remove(); });
   $('#external li a[rel*=external]').removeClass('active');
 }
 
 function display_feed_summary(feed_name, feed_uri) {
-  $('#external .feed').fadeOut(function() { $(this).remove() });
-  $('#external').append('<div class="feed" id="' + feed_name + '-feed" style="display: none;"></div>');
+  if ($('#external #' + feed_name + '-feed').length == 0) {
+    console.log('append!');
+    $('#external').append('<div class="feed" id="' + feed_name + '-feed" style="display: none;"></div>');
+  }
   $.ajax({
     url:feed_uri,
     type:'get',
@@ -59,7 +61,6 @@ function display_feed_summary(feed_name, feed_uri) {
       }
       content += '</ol>';
     	content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
-    	console.log('a.' + feed_name + '[rel*=external]');
     	content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
       $('#' + feed_name + '-feed').html(content).fadeIn();
     }
@@ -68,8 +69,9 @@ function display_feed_summary(feed_name, feed_uri) {
 }
 
 function show_github_repositories(json) {
-  $('#external .feed').fadeOut(function() { $(this).remove() });
-  $('#external').append('<div class="feed" id="github-feed" style="display: none;"></div>');
+  if ($('#external #github-feed').length == 0) {
+    $('#external').append('<div class="feed" id="github-feed" style="display: none;"></div>');
+  }
 	var content = '<ol>';
 	var n = 0;
 	$.each(json, function(i) {
@@ -82,5 +84,5 @@ function show_github_repositories(json) {
 	content += '</ol>';
 	content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
 	content += '<a class="more" target="_blank" href="http://github.com/fauxparse">More</a>';
-	$('#external .feed').html(content).fadeIn();
+	$('#external #github-feed').html(content).fadeIn();
 };

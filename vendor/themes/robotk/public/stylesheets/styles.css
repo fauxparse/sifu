@@ -76,7 +76,7 @@ body, td, input, select, textarea {
   #external {
     position: absolute;
     left: -272px;
-    top: 256px;
+    top: 248px;
     color: #111;
   }
   
@@ -97,21 +97,28 @@ body, td, input, select, textarea {
     border: none;
     text-indent: -1000em;
     overflow: hidden;
+    position: relative;
+    left: -4px;
+    opacity: 0.5;
   }
   
   #external ul li a:hover,
+  #external ul li a.active {
+    opacity: 1.0;
+  }
+
   #external ul li a.active {
     background-position: 0px 100%;
   }
   
   #external ul li a.stfu    { background-image: url(../images/logo-stfu.png); height: 40px; width: 168px; margin-bottom: 4px; }
-  #external ul li a.twitter { background-image: url(../images/logo-twitter.png); height: 40px; width: 164px; }
-  #external ul li a.last-fm { background-image: url(../images/logo-last-fm.png); height: 64px; width: 148px; }
-  #external ul li a.github  { background-image: url(../images/logo-github.png); height: 64px; width: 200px; }
+  #external ul li a.twitter { background-image: url(../images/logo-twitter.png); height: 44px; width: 168px; }
+  #external ul li a.last-fm { background-image: url(../images/logo-last-fm.png); height: 68px; width: 156px; }
+  #external ul li a.github  { background-image: url(../images/logo-github.png); height: 68px; width: 204px; }
   
   #external .feed {
     position: absolute;
-    bottom: 0px;
+    bottom: 4px;
     left: -320px;
     width: 304px;
     background: #666;
