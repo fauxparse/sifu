@@ -21,16 +21,16 @@ $(document).ready(function() {
     return false;
   });
   
-  $('#external a.twitter[rel*=external]').click(function() { display_feed_summary('twitter', 'http://localhost:3000/feeds/twitter'); });
-  $('#external a.last-fm[rel*=external]').click(function() { display_feed_summary('last-fm', 'http://localhost:3000/feeds/last-fm'); });
-  $('#external a.stfu[rel*=external]').click(function() { display_feed_summary('stfu', 'http://localhost:3000/feeds/stfu'); });
+  $('#external a.twitter[rel*=external]').click(function() { display_feed_summary('twitter', '/feeds/twitter'); });
+  $('#external a.last-fm[rel*=external]').click(function() { display_feed_summary('last-fm', '/feeds/last-fm'); });
+  $('#external a.stfu[rel*=external]').click(function() { display_feed_summary('stfu', '/feeds/stfu'); });
   $('#external a.github[rel*=external]').click(function() {
   	$.getJSON('http://github.com/api/v2/json/repos/show/fauxparse?callback=?', function(json, status){
   		show_github_repositories(json.repositories.reverse());
   	});
   });
   $('#blurb a[rel*=about]').click(function() {
-    $('#external a[rel*=external]').removeClass('active');G
+    $('#external a[rel*=external]').removeClass('active');
     $('#external .feed').fadeOut('fast', function() { $(this).remove() });
     if ($('#bio:visible').length == 0) {
       $('#bio').fadeIn();

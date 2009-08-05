@@ -41,9 +41,11 @@ class Feed < ActiveRecord::Base
     attr_reader :title, :description, :date, :link, :guid
     
     def initialize(title, description, date, link, guid)
+      date = Time.zone.parse(date)
+
       @title       = title
       @description = description
-      @date        = date
+      @date        = date && date.strftime("%A, %d %B, %Y at %I:%M %p").gsub(/(\s+)0/, '\1')
       @link        = link
       @guid        = guid
     end

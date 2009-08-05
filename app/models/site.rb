@@ -2,6 +2,12 @@ class Site < ActiveRecord::Base
   has_many :users, :dependent => :destroy
   accepts_nested_attributes_for :users
   
+  # Returns the website's timezone.
+  # TODO: make this configurable
+  def time_zone
+    ActiveSupport::TimeZone["Wellington"]
+  end
+  
   class << self
     def instance(force_reload = false)
       (force_reload || !@instance) ? (@instance = (find(:first) || new)) : @instance
