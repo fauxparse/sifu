@@ -12,10 +12,35 @@ body, td, input, select, textarea {
   font: 14px/1.6 Helvetica, Arial, sans-serif;
 }
 
+a {
+  outline: none;
+}
+
 #container {
   margin-left: 288px;
   position: relative;
 }
+
+/* Font embedding {{{ */
+/*
+@font-face {
+  font-family: Museo;
+  src: url(../fonts/Museo500-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Museo;
+  font-weight: 300;
+  src: url(../fonts/Museo300-Regular.otf) format("opentype");
+}
+*/
+@font-face {
+  font-family: Museo;
+  font-weight: 700;
+  src: url(../fonts/Museo700-Regular.otf) format("opentype");
+}
+
+/* }}} */
 
 /* Sidebar {{{ */
 
@@ -26,9 +51,9 @@ body, td, input, select, textarea {
   #header #logo a {
     position: absolute;
     left: -72px;
-    top: 252px;
-    width: 104px;
-    height: 248px;
+    top: 240px;
+    width: 108px;
+    height: 264px;
     text-decoration: none;
     border: none;
     text-indent: -1000em;
@@ -83,7 +108,7 @@ body, td, input, select, textarea {
   #external {
     position: absolute;
     left: -272px;
-    top: 248px;
+    top: 252px;
     color: #111;
   }
   
@@ -106,6 +131,7 @@ body, td, input, select, textarea {
     overflow: hidden;
     position: relative;
     left: -4px;
+    outline: none;
     opacity: 0.5;
   }
   
@@ -231,4 +257,37 @@ body, td, input, select, textarea {
 
   /* }}} */
   
+/* }}} */
+
+/* Body {{{ */
+
+#main {
+  position: relative;
+  padding: 4em 10em 4em 48px;
+}
+
+#main h1 {
+  position: absolute;
+  right: 0.25em;
+  top: -1em;
+  text-align: right;
+  font: 700 7em "Museo", Helvetica, sans-serif;
+  text-transform: lowercase;
+  padding-left: 1em;
+  color: #ccc;
+  opacity: 0.5;
+  -webkit-transform: rotate(-90deg);
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform: rotate(-90deg);
+  -moz-transform-origin: 100% 100%;
+}
+
+#main h1.design-entries       { color: #8dc63f; }
+#main h1.illustration-entries { color: #ec008c; }
+#main h1.code-entries         { color: #00aeef; }
+#main h1.writing-entries      { color: #ffcc00; }
+#main h1.theatre-entries      { color: #ed1c24; }
+#main h1.grammar-entries      { color: #f26522; }
+
+
 /* }}} */
