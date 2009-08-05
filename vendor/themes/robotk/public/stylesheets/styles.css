@@ -248,7 +248,7 @@ a {
   #copyright .title {
     font-weight: bold;
     letter-spacing: -0.1em;
-    font-size: 125%;
+    font-size: 150%;
   }
   
   #copyright a {
@@ -263,19 +263,21 @@ a {
 
 #main {
   position: relative;
-  padding: 4em 10em 4em 48px;
+  padding: 2em 10em 6em 64px;
+  border-top: 24px solid rgba(0, 0, 0, 0.25);
 }
 
 #main h1 {
   position: absolute;
-  right: 0.25em;
-  top: -1em;
+  right: 0em;
+  top: -0.75em;
   text-align: right;
-  font: 700 7em "Museo", Helvetica, sans-serif;
+  font: 700 7em Helvetica, sans-serif;
   text-transform: lowercase;
+  letter-spacing: -0.1em;
   padding-left: 1em;
   color: #ccc;
-  opacity: 0.5;
+  opacity: 1.0;
   -webkit-transform: rotate(-90deg);
   -webkit-transform-origin: 100% 100%;
   -moz-transform: rotate(-90deg);
@@ -289,5 +291,74 @@ a {
 #main h1.theatre-entries      { color: #ed1c24; }
 #main h1.grammar-entries      { color: #f26522; }
 
+/* }}} */
+
+/* Entry {{{ */
+
+.hentry {
+  
+}
+
+.hentry .entry-header {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.hentry .entry-title {
+  font-size: 400%;
+  font-weight: bold;
+  letter-spacing: -0.1em;
+  line-height: 1.0;
+  vertical-align: baseline;
+  padding-top: 0.35em;
+}
+
+.hentry .published {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.hentry .entry-header .vcard {
+  display: none;
+}
+
+.hentry .entry-header .entry-tags {
+}
+
+.hentry .entry-header .entry-tags a,
+.hentry .entry-header .entry-comments {
+  font-weight: bold;
+  font-size: 125%;
+  letter-spacing: -0.1em;
+  text-decoration: none;
+  border-right: 1px solid #ccc;
+  margin-right: 0.25em;
+  padding-right: 0.5em;
+  text-transform: lowercase;
+  color: #999;
+}
+
+.hentry .entry-header .entry-comments {
+  border: none;
+}
+
+.hentry .entry-title .entry-permalink {
+  color: #333;
+  text-decoration: none;
+  border: none;
+}
+
+.hentry p {
+  margin: 0px 0px 1em;
+}
+
+.hentry .entry-summary p:first-child {
+  font-size: 150%;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
 
 /* }}} */

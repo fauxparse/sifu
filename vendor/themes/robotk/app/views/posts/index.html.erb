@@ -1,3 +1,22 @@
-<%= content_tag :h1, @tag || "Latest", :class => (@tag || "latest").parameterize + "-entries" %>
+<%= content_tag :h1, @tag || "Latest entries", :class => (@tag || "latest").parameterize + "-entries" %>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<% content_tag :div, :class => "hfeed" do -%>
+  <% content_tag :div, :class => "hentry design", :id => "entry_1" do -%>
+    <% content_tag :div, :class => "entry-header" do -%>
+      <%= content_tag :h2, link_to("Awful social conventions", "#", :class => "entry-permalink", :rel => :bookmark), :class => "entry-title" %>
+      <% content_tag :div, :class => "entry-meta" do -%>
+        <%= content_tag :span, link_to("Matt Powell", "http://robo.tk/", :class =>  "url fn"), :class => "vcard" %>
+        <%= content_tag :span, DateTime.now.to_s(:long_ordinal), :class => "published", :title => DateTime.now.to_s %>
+        <% content_tag :span, :class => "entry-tags" do -%>
+          <%= link_to "design", "/design", :rel => "tag" %>
+        <% end -%> 
+        <%= link_to "No comments.", "/", :class => "entry-comments", :rel => "comments" %>
+      <% end -%>
+    <% end -%>
+    <% content_tag :div, :class => "entry-summary" do -%>
+      <p>I like beer. Not in the “hey, weren’t there two dozen cans in this box not long ago” kind of way, but I do enjoy both the taste and the attendant social experience when drinking among people with a similar attitude to alcohol consumption. But.</p>
+      <p>Imagine for a moment that I am walking along the street drinking beer from a bottle. (In fact, this is something you can only imagine, because it’s illegal in Christchurch.) After drinking most of the beer, I throw the bottle on the ground and kick it about a bit, leaving a little splattering of beer across the footpath and a lingering hoppy odour, before walking off and continuing with my day.</p>
+      <p>This is completely mad behaviour, right? And yet, this is what cigarette smokers do, sometimes many times a day.</p>
+    <% end -%>
+  <% end -%>
+<% end -%>
