@@ -257,6 +257,37 @@ a {
 
   /* }}} */
   
+  /* Bio {{{ */
+
+  #bio {
+    position: absolute;
+    left: -888px;
+    top: 0px;
+    width: 600px;
+    height: 544px;
+    background: url(../images/matt.jpg) no-repeat 100% 100%;
+  }
+  
+  #bio h2 {
+    font-size: 750%;
+    line-height: 1.0;
+    position: absolute;
+    bottom: 40px;
+    right: 116px;
+    color: #444;
+    letter-spacing: -0.1em;
+  }
+  
+  #bio .group {
+    position: absolute;
+    bottom: 128px;
+    right: 136px;
+    width: 308px;
+    color: #999;
+  }
+
+  /* }}} */
+  
 /* }}} */
 
 /* Body {{{ */

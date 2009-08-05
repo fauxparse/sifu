@@ -13,7 +13,7 @@ $(document).ready(function() {
       } else {
         $(this).addClass('active');
         $('body').animate({ backgroundPosition:'(-704px 0px)' }, 500, 'easeOutBounce');
-        $('#container').animate({ left:'+=320px' }, 500, 'easeOutBounce', function() {
+        $('#container').animate({ left:'320px' }, 500, 'easeOutBounce', function() {
           
         });
       }
@@ -29,9 +29,25 @@ $(document).ready(function() {
   		show_github_repositories(json.repositories.reverse());
   	});
   });
+  $('#blurb a[rel*=about]').click(function() {
+    $('#external a[rel*=external]').removeClass('active');G
+    $('#external .feed').fadeOut('fast', function() { $(this).remove() });
+    if ($('#bio:visible').length == 0) {
+      $('#bio').fadeIn();
+      $('body').animate({ backgroundPosition:'(-384px 0px)' }, 500, 'easeOutBounce');
+      $('#container').animate({ left:'640px' }, 500, 'easeOutBounce', function() {
+        
+      });
+    } else {
+      close_sidebar();
+    }
+    return false;
+  });
+  $('#bio').hide();
 });
 
 function close_sidebar(easing, callback) {
+  $('#bio').fadeOut(500);
   $('#external .feed').fadeOut('fast', function() { $(this).remove() });
   if (typeof(easing) == 'undefined') easing = 'easeOutBounce';
   var l = parseInt($('#container').css('left'));
