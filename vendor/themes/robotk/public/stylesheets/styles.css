@@ -30,14 +30,19 @@ a {
 
 @font-face {
   font-family: Museo;
+  font-weight: 700;
+  src: url(../fonts/Museo700-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: Museo;
   font-weight: 300;
   src: url(../fonts/Museo300-Regular.otf) format("opentype");
 }
 */
 @font-face {
-  font-family: Museo;
-  font-weight: 700;
-  src: url(../fonts/Museo700-Regular.otf) format("opentype");
+  font-family: Helvetica;
+  font-weight: 300;
+  src: url(../fonts/HelveticaNeueLTStd-Th.otf) format("opentype");
 }
 
 /* }}} */
@@ -264,7 +269,7 @@ a {
     left: -888px;
     top: 0px;
     width: 600px;
-    height: 544px;
+    height: 552px;
     background: url(../images/matt.jpg) no-repeat 100% 100%;
   }
   
@@ -284,6 +289,7 @@ a {
     right: 136px;
     width: 308px;
     color: #999;
+    font-weight: 100;
   }
 
   /* }}} */
@@ -386,10 +392,17 @@ a {
   margin: 0px 0px 1em;
 }
 
+.hentry .entry-summary,
+.hentry .entry-body {
+  color: #444;
+}
+
 .hentry .entry-summary p:first-child {
   font-size: 150%;
   line-height: 1.5;
   margin-bottom: 0.5em;
+  font-weight: 300;
+  color: #333;
 }
 
 /* }}} */
