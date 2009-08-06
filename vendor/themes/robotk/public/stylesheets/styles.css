@@ -128,8 +128,7 @@ a {
 
   #external ul li a {
     display: block;
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
+    background: url(../images/external-logos.png) no-repeat 0px 0px;
     text-decoration: none;
     border: none;
     text-indent: -1000em;
@@ -149,10 +148,14 @@ a {
     background-position: 0px 100%;
   }
   
-  #external ul li a.stfu    { background-image: url(../images/logo-stfu.png); height: 40px; width: 168px; margin-bottom: 4px; }
-  #external ul li a.twitter { background-image: url(../images/logo-twitter.png); height: 44px; width: 168px; }
-  #external ul li a.last-fm { background-image: url(../images/logo-last-fm.png); height: 68px; width: 156px; }
-  #external ul li a.github  { background-image: url(../images/logo-github.png); height: 68px; width: 204px; }
+  #external ul li a.twitter        { background-position: 0px 0px; height: 44px; width: 168px; }
+  #external ul li a.twitter.active { background-position: 0px -44px; }
+  #external ul li a.stfu           { background-position: 0px -88px; height: 40px; width: 168px; margin-bottom: 4px; }
+  #external ul li a.stfu.active    { background-position: 0px -128px; }
+  #external ul li a.last-fm        { background-position: 0px -168px; height: 68px; width: 156px; }
+  #external ul li a.last-fm.active { background-position: 0px -236px; }
+  #external ul li a.github         { background-position: 0px -304px; height: 68px; width: 204px; }
+  #external ul li a.github.active  { background-position: 0px -372px; }
   
   #external .feed {
     position: absolute;
