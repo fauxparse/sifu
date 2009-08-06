@@ -40,7 +40,7 @@ a {
 }
 */
 @font-face {
-  font-family: Helvetica;
+  font-family: "Helvetica Neue";
   font-weight: 300;
   src: url(../fonts/HelveticaNeueLTStd-Th.otf) format("opentype");
 }
@@ -300,7 +300,8 @@ a {
     right: 136px;
     width: 308px;
     color: #999;
-    font-weight: 100;
+    font-weight: 300;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   /* }}} */
@@ -414,6 +415,7 @@ a {
   line-height: 1.5;
   margin-bottom: 0.5em;
   font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
