@@ -3,6 +3,13 @@
     Logged in as <strong><%= current_user %></strong>
     <%= link_to_remote "Log out", :update => "ajax-login", :url => admin_session_url, :method => :delete, :html => { :class => "log-out" } %>
   <% end -%>
+  <% content_tag :ul, :class => "admin-menu" do -%>
+    <li><%= link_to "Posts", admin_posts_path, :rel => :admin %></li>
+  <% end -%>
+  <% content_tag :div, :id => "admin", :style => "display: none;" do -%>
+    <%= link_to_function "&times;", "Admin.close()", :class => "close" %>
+    <%= content_tag :div, "", :id => "admin-inner" %>
+  <% end -%>
 <% else -%>
   <% remote_form_for @user_session || UserSession.new, :update => "ajax-login", :url => admin_session_path, :html => { :id => "login-form", :style => "left: #{@user_session ? 0 : 100}%;" } do |form| -%>
     <ol class="form">

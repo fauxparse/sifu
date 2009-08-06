@@ -10,3 +10,34 @@ $(document).keypress(function(e) {
     return false;
   }
 });
+
+var Admin = {
+  width: 720,
+  
+  bind_links:function() {
+    $('a[rel*=admin]').unbind('click.admin').bind('click.admin', function() {
+      Admin.open(this);
+      return false;
+    });
+  },
+  
+  open:function(link) {
+    $('#footer').hide();
+    $('#admin').show();
+    $('#admin-inner').load(link.href, function() {
+      
+    });
+    $('body').animate({ backgroundPosition:'(-512px 0px)' }, 500, 'easeOutBounce');
+    $('#container').animate({ left:Admin.width - 208 + 'px' }, 500, 'easeOutBounce');
+  },
+  
+  close:function() {
+    $('#admin').hide();
+    $('#footer').show();
+    $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 500, 'easeOutBounce');
+    $('#container').animate({ left:'0px' }, 500, 'easeOutBounce');
+  }
+};
+
+$(document).ready(Admin.bind_links);
+$(document).ajaxSuccess(Admin.bind_links);

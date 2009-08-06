@@ -55,9 +55,8 @@ function close_sidebar(easing, callback) {
   $('#bio').fadeOut(500);
   $('#external .feed').fadeOut('fast', function() { $(this).remove() });
   if (typeof(easing) == 'undefined') easing = 'easeOutBounce';
-  var l = parseInt($('#container').css('left'));
   $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 500, easing);
-  $('#container').animate({ left:'-=' + l + 'px' }, 500, easing, callback);
+  $('#container').animate({ left:'0px' }, 500, easing, callback);
   $('#external .feed').fadeOut(function() { $(this).remove(); });
   $('#external li a[rel*=external]').removeClass('active');
 }
