@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090731081756) do
+ActiveRecord::Schema.define(:version => 20090806042105) do
 
   create_table "feeds", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(:version => 20090731081756) do
   end
 
   add_index "feeds", ["name"], :name => "index_feeds_on_name"
+
+  create_table "posts", :force => true do |t|
+    t.integer  "author_id"
+    t.string   "type"
+    t.string   "title"
+    t.text     "summary"
+    t.text     "body"
+    t.string   "state"
+    t.integer  "comments_count", :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sites", :force => true do |t|
     t.datetime "created_at"
