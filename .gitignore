@@ -3,6 +3,7 @@ config/database.yml
 *.cache
 *.log
 *.pid
+._*
 tmp/**/*
 .DS_Store
 db/cstore/**
