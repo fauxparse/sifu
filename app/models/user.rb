@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   acts_as_authentic do |config|
     # configuration goes here
   end
+  
+  def name
+    [ first_name, last_name ].reject(&:blank?).join(" ")
+  end
+  alias_method :to_s, :name
 end

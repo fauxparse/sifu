@@ -2,11 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 	<title>robo.tk</title>
-	<link rel="stylesheet" href="/robotk/stylesheets/styles.css" type="text/css" media="screen" charset="utf-8" />
-	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.easing.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/jquery.background.js"></script>
-	<script type="text/javascript" charset="utf-8" src="/robotk/javascripts/externals.js"></script>
+	<%= stylesheet_link_tag "/robotk/stylesheets/styles.css", "/robotk/stylesheets/admin.css", :cache => true %>
+	<%= javascript_include_tag "/robotk/javascripts/jquery.js", "jrails.js", "/robotk/javascripts/jquery.easing.js", "/robotk/javascripts/jquery.background.js", "/robotk/javascripts/externals.js", "/robotk/javascripts/admin.js", :cache => true %>
 	<%= yield :head %>
 </head>
 <body>
@@ -26,6 +23,10 @@
         <p>And now you know everything there is to know…</p>
       </div>
     </div>
+    
+    <% content_tag :div, :id => "ajax-login" do -%>
+      <%= render :partial => "/admin/sessions/ajax_login" %>
+    <% end -%>
     
     <div id="footer">
       <blockquote id="blurb">

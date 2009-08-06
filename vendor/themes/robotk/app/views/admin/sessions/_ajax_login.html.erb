@@ -1,0 +1,16 @@
+<% if logged_in? -%>
+  <% content_tag :span, :class => "logged-in" do -%>
+    Logged in as <strong><%= current_user %></strong>
+    <%= link_to_remote "Log out", :update => "ajax-login", :url => admin_session_url, :method => :delete, :html => { :class => "log-out" } %>
+  <% end -%>
+<% else -%>
+  <% remote_form_for @user_session || UserSession.new, :update => "ajax-login", :url => admin_session_path, :html => { :id => "login-form", :style => "left: #{@user_session ? 0 : 100}%;" } do |form| -%>
+    <ol class="form">
+      <li><%= form.label :login, "User:" %> <%= form.text_field :login, :class => "text" %></li>
+      <li><%= form.label :password, "Pass:" %> <%= form.password_field :password, :class => "text" %></li>
+      <li class="buttons"><%= submit_tag "Log in", :class => "button" %></li>
+    </ol>
+    <%= form.hidden_field :remember_me, :value => 1 %>
+    <%= content_tag :span, flash.delete(:login_error), :class => "login-error" if flash[:login_error] %>
+  <% end -%>
+<% end -%>

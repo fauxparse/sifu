@@ -301,7 +301,7 @@ a {
 #main {
   position: relative;
   padding: 2em 144px 6em 64px;
-  border-top: 24px solid rgba(0, 0, 0, 0.25);
+  border-top: 28px solid rgba(0, 0, 0, 0.25);
 }
 
 #main h1 {
