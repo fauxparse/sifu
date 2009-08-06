@@ -157,6 +157,14 @@ a {
   #external ul li a.github         { background-position: 0px -304px; height: 68px; width: 204px; }
   #external ul li a.github.active  { background-position: 0px -372px; }
   
+  #external .loading {
+    position: absolute;
+    left: -48px;
+    width: 32px;
+    height: 32px;
+    background: url(../images/loading-feed.gif) no-repeat 0px 50%;
+  }
+  
   #external .feed {
     position: absolute;
     bottom: 4px;

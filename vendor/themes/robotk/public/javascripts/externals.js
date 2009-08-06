@@ -11,6 +11,10 @@ $(document).ready(function() {
           $(clicked).click();
         });
       } else {
+        if ($('#external .loading').length == 0) {
+          $('#external').append('<div class="loading" style="display: none;"></div>');
+        }
+        $('#external .loading').css({ top:$(this).position().top + 'px', height:$(this).height() + 'px' }).fadeIn();
         $(this).addClass('active');
         $('body').animate({ backgroundPosition:'(-704px 0px)' }, 500, 'easeOutBounce');
         $('#container').animate({ left:'320px' }, 500, 'easeOutBounce', function() {
@@ -26,6 +30,7 @@ $(document).ready(function() {
   $('#external a.stfu[rel*=external]').click(function() { display_feed_summary('stfu', '/feeds/stfu'); });
   $('#external a.github[rel*=external]').click(function() {
   	$.getJSON('http://github.com/api/v2/json/repos/show/fauxparse?callback=?', function(json, status){
+      $('#external .loading').fadeOut();
   		show_github_repositories(json.repositories.reverse());
   	});
   });
@@ -75,8 +80,9 @@ function display_feed_summary(feed_name, feed_uri) {
         content += '<span class="date">' + data[i].date + '</span></li>';
       }
       content += '</ol>';
-     content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
-     content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
+      content += '<a class="close" href="#" onclick="close_sidebar(); return false;">Close</a>';
+      content += '<a class="more" target="_blank" href="' + $('a.' + feed_name + '[rel*=external]').attr('href') + '">More</a>';
+      $('#external .loading').fadeOut();
       $('#' + feed_name + '-feed').html(content).fadeIn();
     }
   });
