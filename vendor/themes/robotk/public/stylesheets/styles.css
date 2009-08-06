@@ -300,19 +300,20 @@ a {
 
 #main {
   position: relative;
-  padding: 2em 10em 6em 64px;
+  padding: 2em 144px 6em 64px;
   border-top: 24px solid rgba(0, 0, 0, 0.25);
 }
 
 #main h1 {
   position: absolute;
   right: 0em;
-  top: -0.75em;
-  text-align: right;
-  font: 700 7em Helvetica, sans-serif;
+  top: -152px;
+  text-align: left;
+  width: 500px;
+  height: 128px;
+  font: 700 108px Helvetica, sans-serif;
   text-transform: lowercase;
   letter-spacing: -0.1em;
-  padding-left: 1em;
   color: #ccc;
   opacity: 1.0;
   -webkit-transform: rotate(-90deg);
