@@ -4,9 +4,10 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  extend ActiveSupport::Memoizable
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
 
   before_filter :check_site_configuration
   
@@ -20,17 +21,25 @@ protected
   end
 
   def current_user_session
-    @current_user_session ||= UserSession.find
-  end
-
-  def current_user
-    @current_user ||= current_user_session && current_user_session.user
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
   end
   
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+    
   def logged_in?
     !!current_user
   end
   
+  def log_out!
+    current_user_session.destroy
+    @current_user = nil
+    @current_user_session = nil
+  end
+    
   def require_user
     unless current_user
       store_location

@@ -6,13 +6,12 @@ class Admin::SessionsController < ApplicationController
   end
   
   def create
-    if logged_in?
-      current_user_session.destroy
-      @current_user_session, @current_user = nil, nil
-    end
+    log_out! if logged_in?
+    logger.info logged_in?.inspect
 
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
+      @current_user_session, @current_user = @user_session, @user_session.record
       if request.xhr?
         render :partial => "ajax_login"
       else
@@ -30,14 +29,13 @@ class Admin::SessionsController < ApplicationController
   end
   
   def destroy
-    current_user_session.destroy
-    @current_user_session, @current_user = nil, nil
+    log_out!
     
     if request.xhr?
       render :partial => "ajax_login"
     else
       flash[:notice] = "You have been logged out"
-      redirect_back_or_default new_user_session_url
+      redirect_to root_url
     end
   end
 end
