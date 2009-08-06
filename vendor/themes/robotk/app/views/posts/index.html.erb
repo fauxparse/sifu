@@ -1,4 +1,4 @@
-<%= content_tag :h1, @tag || "Latest entries", :class => (@tag || "latest").parameterize + "-entries" %>
+<%= content_tag :h1, @tag || "Latest", :class => (@tag || "latest").parameterize + "-entries" %>
 
 <% content_tag :div, :class => "hfeed" do -%>
   <% content_tag :div, :class => "hentry design", :id => "entry_1" do -%>

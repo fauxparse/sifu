@@ -65,13 +65,16 @@ a {
     overflow: hidden;
     background: url(../images/logo.png) no-repeat 0px 0px;
   }
+  
+  #footer {
+    position: absolute;
+    top: 16px;
+    left: -272px;
+  }
 
   /* Blurb {{{ */
 
   #blurb {
-    position: absolute;
-    left: -272px;
-    top: 16px;
     width: 256px;
     height: 232px;
     background: url(../images/bubble.png) no-repeat 0px 0px;
@@ -111,9 +114,6 @@ a {
   /* Also appearing… {{{ */
     
   #external {
-    position: absolute;
-    left: -272px;
-    top: 252px;
     color: #111;
   }
   
@@ -253,18 +253,16 @@ a {
   /* Copyright {{{ */
 
   #copyright {
-    position: absolute;
-    top: 512px;
-    left: -272px;
     width: 224px;
     color: #181818;
     font-size: 85%;
   }
-  
+
   #copyright .title {
     font-weight: bold;
     letter-spacing: -0.1em;
     font-size: 150%;
+    color: black;
   }
   
   #copyright a {

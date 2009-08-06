@@ -22,8 +22,8 @@ var Admin = {
   },
   
   open:function(link) {
-    $('#footer').hide();
-    $('#admin').show();
+    $('#footer').fadeOut();
+    $('#admin').fadeIn();
     $('#admin-inner').load(link.href, function() {
       
     });
@@ -32,8 +32,8 @@ var Admin = {
   },
   
   close:function() {
-    $('#admin').hide();
-    $('#footer').show();
+    $('#admin').fadeOut();
+    $('#footer').fadeIn();
     $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 500, 'easeOutBounce');
     $('#container').animate({ left:'0px' }, 500, 'easeOutBounce');
   }
