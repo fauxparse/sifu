@@ -1,5 +1,9 @@
 class Admin::PostsController < Admin::AdminController
-  def admin
-    @posts = Posts.all
+  def index
+    @posts = Post.all
+  end
+  
+  def new
+    @post = Post.new
   end
 end

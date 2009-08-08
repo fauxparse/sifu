@@ -1,0 +1,7 @@
+<%= form.error_messages %>
+<% form.inputs do -%>
+  <%= form.input :title %>
+  <%= form.input :summary, :input_html => { :rows => 6 } %>
+  <%= form.input :body, :input_html => { :rows => 12 } %>
+  <%= form.input :published_at, :order => %w(day month year).map(&:to_sym) %>
+<% end -%>

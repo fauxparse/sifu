@@ -1,0 +1,9 @@
+<h1>New post</h1>
+
+<% remote_form_for @post, :url => admin_posts_path(:format => :js), :builder => Formtastic::SemanticFormBuilder, :html => { :class => "formtastic new-post-form" } do |form| -%>
+  <%= render :partial => "form", :object=> form %>
+  <% form.buttons do -%>
+    <%= form.commit_button "Save", :button_html => { :class => "save button" } %>
+    <li><%= button_to_function "Cancel", "$('#new-post').slideUp()", :class => "cancel button" %></li>
+  <% end -%>
+<% end -%>

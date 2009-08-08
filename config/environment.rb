@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem "binarylogic-authlogic", :lib => "authlogic"
   config.gem "justinfrench-formtastic", :lib => "formtastic"
   config.gem "hpricot", :version => '>=0.8.1'
+  config.gem "mislav-will_paginate", :lib => "will_paginate"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

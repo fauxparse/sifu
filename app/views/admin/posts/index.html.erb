@@ -1,1 +1,9 @@
 <h1>Posts</h1>
+
+<%= link_to_remote "New post", :update => "new-post", :url => new_admin_post_path, :success => "$('#new-post').slideDown();", :method => :get, :html => { :class => "button" } %>
+
+<%= content_tag :div, "", :id => "new-post", :style => "display: none" %>
+
+<% content_tag :ul, :id => "posts" do -%>
+  <%= render :partial => "post", :collection => @posts %>
+<% end -%>

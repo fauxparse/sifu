@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090806042105) do
+ActiveRecord::Schema.define(:version => 20090808022640) do
 
   create_table "feeds", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20090806042105) do
     t.integer  "comments_count", :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "published_at"
   end
 
   create_table "sites", :force => true do |t|
@@ -41,15 +42,15 @@ ActiveRecord::Schema.define(:version => 20090806042105) do
 
   create_table "users", :force => true do |t|
     t.integer  "site_id"
-    t.string   "first_name",          :null => false
-    t.string   "last_name",           :null => false
-    t.string   "login",               :null => false
-    t.string   "email",               :null => false
-    t.string   "crypted_password",    :null => false
-    t.string   "password_salt",       :null => false
-    t.string   "persistence_token",   :null => false
-    t.string   "single_access_token", :null => false
-    t.string   "perishable_token",    :null => false
+    t.string   "first_name",          :default => "", :null => false
+    t.string   "last_name",           :default => "", :null => false
+    t.string   "login",               :default => "", :null => false
+    t.string   "email",               :default => "", :null => false
+    t.string   "crypted_password",    :default => "", :null => false
+    t.string   "password_salt",       :default => "", :null => false
+    t.string   "persistence_token",   :default => "", :null => false
+    t.string   "single_access_token", :default => "", :null => false
+    t.string   "perishable_token",    :default => "", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
