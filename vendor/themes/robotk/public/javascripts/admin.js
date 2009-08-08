@@ -22,7 +22,7 @@ var Admin = {
   },
   
   open:function(link) {
-    $('#footer').fadeOut();
+    $('#footer, #bio:visible').fadeOut();
     $('#admin').fadeIn();
     $('#admin-inner').load(link.href, function() {
       

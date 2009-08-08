@@ -119,7 +119,7 @@
   top: 0px;
   width: 720px;
   min-height: 100%;
-  background: url(../images/sifu.png) no-repeat 50% 256px;
+  background: url(../images/sifu.png) no-repeat 200px 256px;
 }
 
 #admin a.close {
@@ -246,12 +246,16 @@ abbr[title=required] {
 #admin .datetime ol {
   display: block;
   width: 512px;
+  border: none;
+  padding: 0px;
   margin: -20px 0px 4px 128px;
 }
 
+#admin .formtastic .string input,
 #admin .formtastic .text textarea {
   position: relative;
   z-index: 2;
+  opacity: 0.25;
 }
 
 #admin .datetime ol {
