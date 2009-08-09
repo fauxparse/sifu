@@ -3,8 +3,13 @@
 
 en:
   date:
-    order: [ :year, :month, :day ]
+    order: [ :day, :month, :year ]
   activerecord:
+    errors:
+      template:
+        header:
+          one: "{{count}} error prevented this {{model}} from being saved."
+          other: "{{count}} errors prevented this {{model}} from being saved."
     attributes:
       site:
         users_first_name: User's first name

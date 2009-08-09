@@ -1,0 +1,6 @@
+if @post.valid?
+  page.insert_html :top, "posts", :partial => "post", :object => @post
+  page.visual_effect :slide_up, "new-post"
+else
+  page.replace_html "new-post", :file => "admin/posts/new"
+end

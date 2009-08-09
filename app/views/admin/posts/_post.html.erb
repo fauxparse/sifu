@@ -1,0 +1,3 @@
+<% content_tag :li, :class => "post", :id => dom_id(post) do -%>
+  <%= link_to_remote post.title, :url => edit_admin_post_path(post), :update => "new-post", :html => { :class => "title" } %>
+<% end -%>

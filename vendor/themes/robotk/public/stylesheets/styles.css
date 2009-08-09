@@ -102,6 +102,7 @@ a {
     font-size: 125%;
   }
   
+  #blurb a.name:hover,         #blurb a.name.active         { color: black; }
   #blurb a.design:hover,       #blurb a.design.active       { color: #8dc63f; text-shadow: #8dc63f 0px 0px 2px; }
   #blurb a.illustration:hover, #blurb a.illustration.active { color: #ec008c; text-shadow: #ec008c 0px 0px 2px; }
   #blurb a.code:hover,         #blurb a.code.active         { color: #00aeef; text-shadow: #00aeef 0px 0px 2px; }
@@ -301,6 +302,14 @@ a {
     font-weight: 300;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
+  
+  #bio .closer {
+    position: absolute;
+    bottom: -104px;
+  }
+  
+  #bio a { color: #ccc; }
+  #bio a:hover { color: white; }
 
   /* }}} */
   

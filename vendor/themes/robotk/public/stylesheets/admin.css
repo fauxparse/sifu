@@ -155,6 +155,11 @@
   -moz-transform-origin: 0% 0%;
 }
 
+#admin h2 {
+  letter-spacing: -0.1em;
+  text-transform: lowercase;
+}
+
 #admin-inner {
   margin: 0px 16px 0px 64px;
   padding: 16px 0px;
@@ -283,6 +288,33 @@ abbr[title=required] {
   border: none;
   float: left;
   margin-right: 8px;
+}
+
+#admin .formtastic .inline-errors {
+  display: none;
+}
+
+/* }}} */
+
+/* Errors {{{ */
+
+.errorExplanation {
+  margin: 0px 0px 2ex;
+}
+
+.errorExplanation li {
+  display: block;
+  list-style: none;
+  margin: 0px 0px 1ex;
+  line-height: 1em;
+  border-left: 1em solid #ed1c24;
+  padding-left: 0.5em;
+}
+
+.errorExplanation li a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px dotted #ccc;
 }
 
 /* }}} */

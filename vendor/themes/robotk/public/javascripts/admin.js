@@ -36,6 +36,12 @@ var Admin = {
     $('#footer').fadeIn();
     $('body').animate({ backgroundPosition:'(-1024px 0px)' }, 500, 'easeOutBounce');
     $('#container').animate({ left:'0px' }, 500, 'easeOutBounce');
+  },
+  
+  highlight_errors:function() {
+    $('.errorExplanation li').each(function() {
+      
+    });
   }
 };
 
